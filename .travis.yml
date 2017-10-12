@@ -4,8 +4,9 @@ dist: precise
 os: linux
 
 env:
-   - CFLAGS="-Wnull-dereference -Wnull-dereference -fpie -fstack-protector-strong -D_FORTIFY_SOURCE=2"
-   - CFLAGS="-Werror -Wall -Weverything"
+   - CFLAGS="-Wnull-dereference -fstack-protector-all -D_FORTIFY_SOURCE=2"
+   - CFLAGS="-Werror -Wall"
+   - CFLAGS="-Wall"
 
 compiler:
    - clang
