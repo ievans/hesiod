@@ -1,8 +1,8 @@
 language: c
 
 env:
-   - CFLAGS=$CFLAGS -Wnull-dereference -Wnull-dereference -fpie -fstack-protector-strong -D_FORTIFY_SOURCE=2
-   - CFLAGS=$CFLAGS -Werror -Wall -Weverything
+   - CFLAGS="${CFLAGS} -Wnull-dereference -Wnull-dereference -fpie -fstack-protector-strong -D_FORTIFY_SOURCE=2"
+   - CFLAGS="${CFLAGS} -Werror -Wall -Weverything"
 
 compiler:
    - clang
