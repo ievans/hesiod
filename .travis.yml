@@ -1,4 +1,7 @@
 language: c
+group: stable
+dist: precise
+os: linux
 
 env:
    - CFLAGS="${CFLAGS} -Wnull-dereference -Wnull-dereference -fpie -fstack-protector-strong -D_FORTIFY_SOURCE=2"
@@ -13,5 +16,4 @@ before_install:
 before_script:
   - ./autogen.sh
 script: ./configure && make V=1 && make check V=1
-
 
