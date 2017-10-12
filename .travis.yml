@@ -1,9 +1,17 @@
 language: c
+
+env:
+   - CFLAGS=$CFLAGS -Wnull-dereference -Wnull-dereference -fpie -fstack-protector-strong -D_FORTIFY_SOURCE=2
+   - CFLAGS=$CFLAGS -Werror -Wall -Weverything
+
 compiler:
-  - clang
-  - gcc
+   - clang
+   - gcc
+
 before_install:
   - sudo apt-get install -qq autotools-dev libidn11-dev
 before_script:
   - ./autogen.sh
 script: ./configure && make V=1 && make check V=1
+
+
